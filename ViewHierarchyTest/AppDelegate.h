@@ -6,5 +6,7 @@
 
 @property (strong, nonatomic) UIWindow *window;
 
+- (void)replaceRoot;
+
 @end
 

@@ -1,5 +1,4 @@
-
-
+#import "AppDelegate.h"
 #import "ModalViewController.h"
 
 @interface ModalViewController ()
@@ -19,9 +18,10 @@
 
 - (void)replaceRootViewController
 {
-    UIViewController *vc = [[UIViewController alloc] init];
-    vc.view.backgroundColor = [UIColor yellowColor];
-    self.view.window.rootViewController = vc;
+    // Replacing the root shouldn't be done by a view controller that is active inside the
+    // current view hierarchy
+    AppDelegate *delegate = [UIApplication sharedApplication].delegate;
+    [delegate replaceRoot];
 }
 
 
